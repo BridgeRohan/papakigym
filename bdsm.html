@@ -1,0 +1,251 @@
+<head>
+  <link rel="stylesheet" href="
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  ">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Nova+Square&family=Roboto+Condensed:wght@300&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Quicksand:400,700"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      font-family: Quicksand;
+      font-size: 16px;
+      color: #333;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      padding: 0;
+      border: 0;
+      background-image: url(MainBackground.jpg);
+      background-size: 100vw 100vh;
+      background-repeat: no;
+    }
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(137, 134, 134);
+      height: 240px;
+      width: 450px;
+      border-radius: 20px;
+      margin: 20px auto 20px auto;
+      display: block;
+      border: solid 1px #b2bbaf;
+      box-shadow: 0 0 40px 0 #ddd;
+      position: absolute;
+      top: 33%;
+      left: 37%;
+    }
+    .form:hover {
+      box-shadow: 0 0 60px 0 #ccc;
+      transition: 0.4s;
+      transform: scale(1.02);
+    }
+    .row-one {
+      padding: 20px;
+    }
+    .row-two {
+      padding: 20px;
+    }
+    .text-input {
+      width: 60px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #babdbe;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .text-input:last-child {
+      margin-bottom: 35px;
+    }
+    .text-input:hover {
+      background-color: #cbe7fd;
+    }
+    #submit {
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+      width: 140px;
+      background-color: #babdbe;
+      color: #fff;
+      margin: auto;
+      display: block;
+      outline: none;
+      cursor: pointer;
+    }
+    #submit:hover {
+      background-color: #0a8ef2;
+    }
+    .text {
+      display: inline-block;
+      margin: 5px 20px 5px 8px;
+    }
+    .row-one {
+      padding: 30px 20px 15px 20px;
+      display: flex;
+    }
+    .row-two {
+      padding: 15px 20px 30px 20px;
+    }
+    .container {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .container input {
+      position: absolute;
+      opacity: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #dbeffe;
+      border-radius: 50%;
+    }
+    .container:hover input ~ .checkmark {
+      background-color: #cbe7fd;
+    }
+    .container input:checked ~ .checkmark {
+      background-color: #289df6;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 300;
+      text-align: center;
+      color: black;
+      padding-top: 15px;
+      display: block;
+      position: absolute;
+      top: 560px;
+      left: 710px;
+      background-color: #b2bbaf;
+      border-radius: 50px;
+
+      padding: 10px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 300;
+      text-align: center;
+      position: absolute;
+      top: 520px;
+      left: 733px;
+      background-color: #b2bbaf;
+      border-radius: 50px;
+
+      padding: 10px;
+    }
+    h3 {
+      width: fit-content;
+      height: fit-content;
+      font-size: 59px;
+      position: absolute;
+      top: 80px;
+      left: 235px;
+      font-family: "Bungee Outline", sans-serif;
+      color: #fff;
+      position: absolute;
+      top: -8%;
+      background-color: rgb(137, 134, 134);
+      border-radius: 50px;
+      filter: opacity(0.6);
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    h3 b {
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+      font-size: 59px;
+      position: absolute;
+      top: 80px;
+      left: 188px;
+      font-family: "Bungee Outline", sans-serif;
+      color: black;
+    }
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <h3>Body Mass Index Calculator</h3>
+  <form class="form" id="form" onsubmit="return validateForm()">
+    <div class="row-one">
+      <input
+        type="text"
+        class="text-input"
+        id="age"
+        autocomplete="off"
+        required
+      />
+      <p class="text">Age</p>
+      <label class="container">
+        <input type="radio" name="radio" id="f" />
+        <p class="text">Female</p>
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <input type="radio" name="radio" id="m" />
+        <p class="text">Male</p>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div class="row-two">
+      <input
+        type="text"
+        class="text-input"
+        id="height"
+        autocomplete="off"
+        required
+      />
+      <p class="text">Height (cm)</p>
+      <input
+        type="text"
+        class="text-input"
+        id="weight"
+        autocomplete="off"
+        required
+      />
+      <p class="text">Weight (kg)</p>
+    </div>
+    <button type="button" id="submit">Submit</button>
+  </form>
+  <script src="script.js"></script>
+</body>
